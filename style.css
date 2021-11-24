@@ -1,0 +1,251 @@
+@import url("https://fonts.googleapis.com/css2?family=MuseoModerno:wght@300;400;600&family=Roboto:wght@300;400&display=swap");
+/********************
+mixins
+********************/
+/********************
+basics
+********************/
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Roboto", sans-serif;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: "MuseoModerno", cursive;
+}
+
+.headings::after {
+  display: block;
+  content: "";
+  height: 15px;
+  width: 100px;
+  margin: 30px auto 50px auto;
+  background: linear-gradient(to right, #86d4aa, #209677);
+}
+
+a {
+  transition: 0.3s ease;
+}
+
+/********************
+nav
+********************/
+nav {
+  padding-top: 0 !important;
+}
+nav .container {
+  background: rgba(255, 255, 255, 0.7);
+  padding: 10px;
+}
+nav .container .navbar-brand {
+  flex: 1;
+}
+nav .container .navbar-brand img {
+  width: 50%;
+}
+nav .container .nav-link {
+  text-transform: uppercase;
+  color: #209677;
+}
+nav .container .nav-link:hover {
+  color: #3db89c;
+}
+
+/********************
+mainHeader
+********************/
+.mainHeader img {
+  width: 100%;
+  height: 70vh;
+  object-fit: cover;
+}
+
+/********************
+uvod
+********************/
+.uvod {
+  background-color: #3db89c;
+  padding: 50px;
+  position: relative;
+  top: -120px;
+}
+
+/********************
+usluge
+********************/
+.usluge .card-body {
+  padding: 30px 30px 40px 30px;
+}
+.usluge .card-body .card-title {
+  font-size: 1.5rem;
+}
+.usluge .card-body .card-text {
+  padding: 10px 0 15px 0;
+}
+.usluge .card-body .button {
+  background: #3db89c;
+  padding: 10px 30px;
+  text-transform: uppercase;
+  color: #222222;
+  text-decoration: none;
+}
+.usluge .card-body .button:hover {
+  background: #555;
+  color: #fff;
+}
+
+/********************
+footer
+********************/
+footer {
+  background: #3db89c;
+}
+footer .col-md-4 {
+  line-height: 2;
+}
+footer .col-md-4 h4 {
+  background: #fff;
+  color: #555;
+  display: inline-block;
+  padding: 5px 30px;
+  margin-bottom: 30px;
+}
+footer .col-md-4:nth-child(2) i {
+  color: #555;
+}
+footer .col-md-4:nth-child(3) a {
+  color: #fff;
+  font-size: 1.5rem;
+}
+footer .col-md-4:nth-child(3) a:hover {
+  color: #555;
+}
+
+/********************
+headerBlog
+********************/
+.headerBlog, .kontaktBlog {
+  position: relative;
+}
+.headerBlog img, .kontaktBlog img {
+  height: 50vh;
+  width: 100%;
+  object-fit: cover;
+}
+.headerBlog h1, .kontaktBlog h1 {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  background: rgba(61, 184, 156, 0.8);
+  padding: 30px;
+  color: #fff;
+  transform: translate(-50%, -50%);
+}
+
+/********************
+main
+********************/
+.main {
+  color: #fff;
+}
+.main .blog .featuredImage img {
+  width: 100%;
+  border: 1px solid #3db89c;
+}
+.main .blog .text {
+  background: #3db89c;
+  width: 80%;
+  margin: auto;
+  position: relative;
+  top: -100px;
+  padding: 30px;
+}
+@media (max-widtH: 767px) {
+  .main .blog .text {
+    top: -25px;
+    width: 90%;
+  }
+}
+.main .blog .text .meta {
+  background: #555;
+  display: inline-block;
+  padding: 5px 15px;
+}
+.main .blog .text a {
+  display: inline-block;
+  background: #fff;
+  padding: 10px 30px;
+  text-transform: uppercase;
+  color: #555;
+  text-decoration: none;
+}
+.main .blog .text a:hover {
+  background: #555;
+  color: #fff;
+}
+.main .single {
+  text-align: justify;
+}
+.main .sidebar {
+  border: 1px solid #3db89c;
+  margin-bottom: 25px;
+  padding: 30px;
+}
+.main .sidebar h3 {
+  color: #555;
+}
+.main .sidebar ul {
+  padding-left: 0;
+  line-height: 1.7;
+}
+.main .sidebar ul a {
+  color: #3db89c;
+  text-decoration: none;
+}
+.main .sidebar ul a:hover {
+  color: #555;
+  text-decoration: underline;
+}
+
+/********************
+kontaktBlog
+********************/
+.kontaktBlog img {
+  height: 70vh;
+}
+
+.forma {
+  background: #3db89c;
+  position: relative;
+  top: -100px;
+  padding: 90px;
+}
+@media (max-width: 767px) {
+  .forma {
+    padding: 40px;
+  }
+}
+.forma .form-group {
+  margin-bottom: 20px;
+}
+.forma .form-group label {
+  margin-bottom: 10px;
+  color: #fff;
+}
+.forma a {
+  background: #555;
+  padding: 10px 30px;
+  text-transform: uppercase;
+  color: #fff;
+  text-decoration: none;
+}
+.forma a:hover {
+  background: #fff;
+  color: #555;
+}
+
+/*# sourceMappingURL=style.css.map */

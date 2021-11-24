@@ -1,0 +1,243 @@
+@import url('https://fonts.googleapis.com/css2?family=MuseoModerno:wght@300;400;600&family=Roboto:wght@300;400&display=swap');
+$tamnoZelena: #209677;
+$srednjeZelena: #3db89c;
+$svetloZelena:#86d4aa;
+$bela: #fff;
+$svetloSiva: #f5f5f5;
+$tamnoSiva: #555;
+$transition: .3s ease;
+$headings: 'MuseoModerno', cursive;
+$bodyFont: 'Roboto', sans-serif;
+/********************
+mixins
+********************/
+@mixin btn($bg: $srednjeZelena, $color: darken($tamnoSiva, 20%), $bgHover: $tamnoSiva, $colorHover: $bela) {
+    background: $bg;
+    padding: 10px 30px;
+    text-transform: uppercase;
+    color: $color;
+    text-decoration: none;
+    &:hover {
+        background: $bgHover;
+        color: $colorHover;
+    }
+}
+/********************
+basics
+********************/
+* {
+    margin: 0;
+    padding: 0;
+}
+body {
+    font-family: $bodyFont;
+}
+h1, h2, h3, h4, h5, h6 {
+    font-family: $headings;
+}
+.headings::after {
+    display: block;
+    content: "";
+    height: 15px;
+    width: 100px;
+    margin: 30px auto 50px auto;
+    background: linear-gradient(to right,$svetloZelena, $tamnoZelena);
+}
+a {
+    transition: $transition;
+}
+/********************
+nav
+********************/
+nav {
+    padding-top: 0 !important;
+    .container {
+        background: rgba($bela, .7);
+        padding: 10px;
+        .navbar-brand {
+            flex: 1;
+            img {
+                width: 50%;
+            }
+        }
+        .nav-link {
+            text-transform: uppercase;
+            color: $tamnoZelena;
+            &:hover {
+                color: $srednjeZelena;
+            }
+        }
+    }
+}
+/********************
+mainHeader
+********************/
+.mainHeader {
+    img {
+        width: 100%;
+        height: 70vh;
+        object-fit: cover;
+    }
+}
+/********************
+uvod
+********************/
+.uvod {
+    background-color: $srednjeZelena;
+    padding: 50px;
+    position: relative;
+    top: -120px;
+}
+/********************
+usluge
+********************/
+.usluge {
+    .card-body {
+        padding: 30px 30px 40px 30px;
+        .card-title {
+            font-size: 1.5rem;
+        }
+        .card-text {
+            padding: 10px 0 15px 0;
+        }
+        .button {
+            @include btn;
+        }
+    }
+}
+/********************
+footer
+********************/
+footer {
+    background: $srednjeZelena;
+    .col-md-4 {
+        line-height: 2;
+        h4 {
+            background: $bela;
+            color: $tamnoSiva;
+            display: inline-block;
+            padding: 5px 30px;
+            margin-bottom: 30px;
+        }
+        &:nth-child(2) {
+            i {
+                color: $tamnoSiva;
+            }
+        }
+        &:nth-child(3) {
+            a {
+                color: $bela;
+                font-size: 1.5rem;
+                &:hover {
+                    color: $tamnoSiva;
+                }
+            }
+        }
+    }
+}
+/********************
+headerBlog
+********************/
+.headerBlog {
+    position: relative;
+    img {
+        height: 50vh;
+        width: 100%;
+        object-fit: cover;
+    }
+    h1 {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        background: rgba($srednjeZelena, .8);
+        padding: 30px;
+        color: $bela;
+        transform: translate(-50%, -50%);
+    }
+}
+/********************
+main
+********************/
+.main {
+    color: $bela;
+    .blog {
+        .featuredImage {
+            img {
+                width: 100%;
+                border: 1px solid $srednjeZelena;
+            }
+        }
+        .text {
+            background: $srednjeZelena;
+            width: 80%;
+            margin: auto;
+            position: relative;
+            top: -100px;
+            padding: 30px;
+            @media(max-widtH: 767px) {
+                top: -25px;
+                width: 90%;
+            }
+            .meta {
+                background: $tamnoSiva;
+                display: inline-block;
+                padding: 5px 15px;
+            }
+            a {
+                display: inline-block;
+                @include btn($bela, $tamnoSiva, $tamnoSiva, $bela);
+            }
+        }
+    }
+    .single {
+        text-align: justify;
+    }
+    .sidebar {
+        border: 1px solid $srednjeZelena;
+        margin-bottom: 25px;
+        padding: 30px;
+        h3 {
+            color: $tamnoSiva;
+        }
+        ul {
+            padding-left: 0;
+            line-height: 1.7;
+            a {
+                color: $srednjeZelena;
+                text-decoration: none;
+                &:hover {
+                    color: $tamnoSiva;
+                    text-decoration: underline;
+                }
+            }
+        }
+    }
+}
+/********************
+kontaktBlog
+********************/
+.kontaktBlog {
+    @extend .headerBlog;
+    img {
+        height: 70vh;
+    }
+}
+.forma {
+    background: $srednjeZelena;
+    position: relative;
+    top: -100px;
+    padding: 90px;
+    @media(max-width: 767px) {
+        padding: 40px;
+    }
+    .form-group {
+        margin-bottom: 20px;
+        label {
+            margin-bottom: 10px;
+            color: $bela;
+        }
+    }
+    a {
+        @include btn($tamnoSiva, $bela, $bela, $tamnoSiva);
+    }
+}
